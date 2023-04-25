@@ -36,4 +36,4 @@ jobs:
           CLASP_SCRIPT_ID: ${{ secrets.SCRIPT_ID }}
         run: |
           yarn run make-clasp-json
-          yes y |yarn run push
+          echo "y" | yes | head -n 1 | yarn run push
