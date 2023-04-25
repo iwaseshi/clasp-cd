@@ -1,0 +1,4 @@
+{
+  "scriptId": "${CLASP_SCRIPT_ID}",
+  "rootDir": "dist"
+}

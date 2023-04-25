@@ -1,0 +1,28 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types:
+      - released
+      - published
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  clasp_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: echo "CLASP_SCRIPT_ID=$CLASP_SCRIPT_ID" >> $GITHUB_ENV
+      - run: yarn run make-clasp-json
+      - run: yarn run push
