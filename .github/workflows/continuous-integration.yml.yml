@@ -5,7 +5,7 @@ on:
       - main
   workflow_call:
 jobs:
-  build:
+  trigger_ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,14 +13,11 @@ jobs:
         with:
           node-version: '16'
           cache: yarn
-      - run: yarn install
-      - run: yarn build
-  trigger_ci:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - run: yarn install --frozen-lockfile
-      - run: yarn format:check
-      - run: yarn format:check
-      - run: yarn type-check
-      - run: yarn test
+      - run: |
+          yarn install
+          yarn build
+          yarn install --frozen-lockfile
+          yarn format:check
+          yarn format:check
+          yarn type-check
+          yarn test
