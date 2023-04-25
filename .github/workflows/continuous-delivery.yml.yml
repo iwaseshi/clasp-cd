@@ -14,7 +14,10 @@ permissions:
   id-token: write
 
 jobs:
+  ci:
+    uses: ./.github/workflows/continuous-integration.yml.yml
   deploy:
+    needs: [ci]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
