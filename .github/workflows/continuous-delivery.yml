@@ -31,7 +31,7 @@ jobs:
           yarn build
           mv appsscript.json dist/appsscript.json
       - name: Set Clasprc Config
-        uses: iwaseshi/clasp-deploy-action@main
+        uses: iwaseshi/clasp-deploy-action@v0.0.1
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ID_TOKEN: ${{ secrets.ID_TOKEN }}
