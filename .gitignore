@@ -108,4 +108,3 @@ typings/
 
 dist/**/*
 !dist/appsscript.json
-.clasp.json
