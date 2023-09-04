@@ -32,11 +32,10 @@ jobs:
           mv appsscript.json dist/appsscript.json
       - name: Set Clasprc Config
         uses: iwaseshi/clasp-deploy-action@main
-        env:
-          CLASP_SCRIPT_ID: ${{ secrets.SCRIPT_ID }}
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ID_TOKEN: ${{ secrets.ID_TOKEN }}
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
           CLIENTID: ${{ secrets.CLIENTID }}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
+          CLASP_SCRIPT_ID: ${{ secrets.SCRIPT_ID }}
