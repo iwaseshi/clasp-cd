@@ -12,13 +12,9 @@
     "test": "jest",
     "build": "run-s build:*",
     "build:clean": "git clean -dxf dist",
-    "build:bundle": "ts-node -T build.ts",
-    "make-clasp-json": "envsub -p -f .env clasp.config.json .clasp.json",
-    "push": "clasp push",
-    "deploy": "run-s build make-clasp-json push"
+    "build:bundle": "ts-node -T build.ts"
   },
   "devDependencies": {
-    "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.57",
     "@types/jest": "^29.5.0",
     "@types/node": "^14.11.2",

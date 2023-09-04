@@ -1,3 +1,3 @@
 export const testtttt = () => {
-  return 'hellooo000OOOO'
+  return 'helloo!'
 }
