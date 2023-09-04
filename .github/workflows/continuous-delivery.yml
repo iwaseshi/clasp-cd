@@ -39,4 +39,4 @@ jobs:
           CLIENTID: ${{ secrets.CLIENTID }}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
           CLASP_SCRIPT_ID: ${{ secrets.SCRIPT_ID }}
-          CLASP_ROOT_DIR: dist
+          ROOT_DIR: dist
