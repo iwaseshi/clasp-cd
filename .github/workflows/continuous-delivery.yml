@@ -30,8 +30,8 @@ jobs:
           yarn install --frozen-lockfile
           yarn build
           mv appsscript.json dist/appsscript.json
-      - name: Set Clasprc Config
-        uses: iwaseshi/clasp-deploy-action@main
+      - name: deploy to Google Apps Script
+        uses: iwaseshi/clasp-deploy-action@v1
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ID_TOKEN: ${{ secrets.ID_TOKEN }}
