@@ -31,16 +31,10 @@ jobs:
           yarn build
           mv appsscript.json dist/appsscript.json
       - name: Set Clasprc Config
-        uses: iwaseshi/clasp-deploy-action@v0.0.1
+        uses: iwaseshi/clasp-deploy-action@main
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ID_TOKEN: ${{ secrets.ID_TOKEN }}
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
           CLIENTID: ${{ secrets.CLIENTID }}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
-      - name: deploy-gas
-        env:
-          CLASP_SCRIPT_ID: ${{ secrets.SCRIPT_ID }}
-        run: |
-          yarn run make-clasp-json
-          echo "y" | yes | head -n 1 | yarn run push
